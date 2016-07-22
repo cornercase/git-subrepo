@@ -1,0 +1,20 @@
+#!/bin/sh
+
+subRepoIdFile='/.gitrepo'
+. git-sh-setup  # for die 
+a=`git-diff-index --name-only -p -M --cached HEAD -- | cut -d '/' -f 1 | sort | uniq`
+outlist=""
+spc='     '
+for s in $a
+do
+   if [ -f "$s$sI" ]; then
+       outlist="${outlist}\n${spc}$s"
+   fi
+done
+
+if [ ${#outlist} -ge 1 ]; then
+   printf "Commit blocked: the following subrepos contain changes $outlist\n"
+   printf "Commit with 'git subrepo commit <folder>' \n"
+   die ""
+fi
+:
