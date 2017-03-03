@@ -577,6 +577,10 @@ issues on anything that seems wrong.
 If you want to chat about the C<git-subrepo> command, join C<#gitcommands> on
 C<irc.freenode.net>.
 
+=head1 Commit Hooks
+
+Commit hooks to prevent local commits from improperly changing subrepos can be found in ./share/git-extra/hooks
+
 =head1 Notes
 
 =over

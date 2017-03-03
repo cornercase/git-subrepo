@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Copy or symlink to or call from a repo's .git/hooks/precompile
+
+
 subRepoIdFile='/.gitrepo'
 . git-sh-setup  # for die 
 a=`git-diff-index --name-only -p -M --cached HEAD -- | cut -d '/' -f 1 | sort | uniq`
